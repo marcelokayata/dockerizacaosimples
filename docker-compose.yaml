@@ -1,0 +1,17 @@
+version: '3'
+services:
+  express-apibase:
+    image: apibase:1.0
+    container_name: apibase-container
+    environment: 
+      - MONGODB_CONNSTRING=mongodb://AzureDiamond:hunter2@mongodb
+    ports:
+      - 4000:4000
+  mongodb:
+    image: mongo:5.0
+    container_name: mongodb-local
+    ports:
+    - 27017:27017
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=AzureDiamond
+      - MONGO_INITDB_ROOT_PASSWORD=hunter2
